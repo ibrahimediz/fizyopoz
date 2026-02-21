@@ -1,21 +1,43 @@
-import React from 'react';
-import { Activity } from 'lucide-react';
-import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import ExerciseSession from './pages/ExerciseSession';
+
+const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
+  const { session, isLoading } = useAuth();
+
+  if (isLoading) {
+    return <div className="h-screen w-screen flex items-center justify-center bg-slate-50 dark:bg-slate-900 text-primary font-bold animate-pulse">Checking authentication...</div>;
+  }
+
+  if (!session) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return <>{children}</>;
+};
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center">
-      <div className="flex items-center space-x-3 mb-6">
-        <Activity className="w-12 h-12 text-blue-500" />
-        <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500">
-          FizyoPoz AI
-        </h1>
-      </div>
-      <p className="text-gray-400 text-lg max-w-lg text-center mb-8">
-        Real-time MediaPipe Pose exercise tracking and Supabase integration.
-        Waiting for HTML designs...
-      </p>
-    </div>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          } />
+          <Route path="/session" element={
+            <ProtectedRoute>
+              <ExerciseSession />
+            </ProtectedRoute>
+          } />
+          <Route path="*" element={<Navigate to="/dashboard" replace />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 
