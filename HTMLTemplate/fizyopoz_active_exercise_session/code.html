@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FizyoPoz Active Exercise Session</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1392ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101a22",
+                        "success": "#10B981", // Health green
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen flex flex-col overflow-hidden">
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 py-3 shrink-0 h-16 shadow-sm z-10">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl">accessibility_new</span>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold tracking-tight">FizyoPoz</h2>
+</div>
+<div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
+<div class="flex flex-col">
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider">Patient</span>
+<span class="text-sm font-semibold text-slate-900 dark:text-white leading-none">John Doe</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 px-4 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-full">
+<span class="material-symbols-outlined text-primary text-xl">timer</span>
+<span class="text-slate-900 dark:text-white font-mono font-bold text-lg">04:23</span>
+</div>
+<button class="flex items-center justify-center gap-2 rounded-lg h-9 px-4 bg-red-500 hover:bg-red-600 text-white text-sm font-bold transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg">stop_circle</span>
+<span class="truncate">End Session</span>
+</button>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-9 border-2 border-slate-200 dark:border-slate-700" data-alt="Therapist profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAGn0CKxTTzEI7y2Ox4ORmC6Lfibkp85FLGjlwF1sunbNoPfK1dnewqSZFJZlTWcEHq6UJjZR7PqHqWEjsLIgJmY6KswN8V0imsG0taXtvSx6rK1Oj0JJ_9xWv73sdJ7MJdlyIW30niNz-0e2MFoQ4Tj4rElzaWbkIoduaYQAhuMQj1P-U4A3W5wIlQI3MNwDxEhLvTIwdiEGbdxjxpQ-eLcFxwPqtoxqiypS-iX5ZiNA5tvDdW6a9GOd_CQSEJa7_JZEOrO1_IgEE");'></div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex overflow-hidden">
+<!-- Left Panel: Video Feed -->
+<div class="flex-1 bg-black relative flex flex-col justify-center items-center overflow-hidden group">
+<!-- Video Background Placeholder -->
+<div class="absolute inset-0 bg-cover bg-center opacity-80" data-alt="Patient performing exercises in a gym setting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAgmRPxT3-m7vui8dfuMrIj-WgsnlJhsyhJd4UDNidD8tcd-mvB0MCmgBufVrbjNUbheTs4OffXPQ6fwiLgRWd_jseLzzZ_QTBayOKeY8k9WOuFcaZFExVxN9AMdXbAHdCDuMM7OpQne2rwYWrGCji5udj-u7h07vsciR1Uf9jHOlJLXJo_OyS6OQHzuLXm5sY8f31NeclRY64tORM9HLvG1h-w9VGNlYNyk4o2Cn72SGyp_6wASJ5vszat3Gs-SO_xbkdvAOmXxTk');"></div>
+<!-- Skeleton Overlay Simulation -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none opacity-90" preserveaspectratio="xMidYMid slice" viewbox="0 0 100 100">
+<!-- Simplified Skeleton Structure -->
+<!-- Spine -->
+<line stroke="#1392ec" stroke-width="0.8" x1="50" x2="50" y1="20" y2="45"></line>
+<!-- Shoulders -->
+<line stroke="#1392ec" stroke-width="0.8" x1="40" x2="60" y1="25" y2="25"></line>
+<!-- Arms -->
+<line stroke="#1392ec" stroke-width="0.8" x1="40" x2="35" y1="25" y2="40"></line>
+<line stroke="#1392ec" stroke-width="0.8" x1="60" x2="65" y1="25" y2="40"></line>
+<!-- Hips -->
+<line stroke="#1392ec" stroke-width="0.8" x1="45" x2="55" y1="45" y2="45"></line>
+<!-- Legs -->
+<line stroke="#1392ec" stroke-width="0.8" x1="45" x2="42" y1="45" y2="65"></line> <!-- Left Thigh -->
+<line stroke="#1392ec" stroke-width="0.8" x1="42" x2="44" y1="65" y2="85"></line> <!-- Left Calf -->
+<line stroke="#10B981" stroke-width="1" x1="55" x2="58" y1="45" y2="65"></line> <!-- Right Thigh (Active) -->
+<line stroke="#10B981" stroke-width="1" x1="58" x2="60" y1="65" y2="85"></line> <!-- Right Calf (Active) -->
+<!-- Joints -->
+<circle cx="50" cy="20" fill="white" r="1.5"></circle> <!-- Head -->
+<circle cx="50" cy="45" fill="white" r="1"></circle> <!-- Hip Center -->
+<circle cx="58" cy="65" fill="#10B981" r="1.5" stroke="white" stroke-width="0.2"></circle> <!-- Right Knee (Focus) -->
+<circle cx="42" cy="65" fill="white" r="1"></circle> <!-- Left Knee -->
+</svg>
+<!-- Live Badge -->
+<div class="absolute top-6 left-6 flex items-center gap-2 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/10">
+<div class="size-2.5 bg-red-500 rounded-full animate-pulse"></div>
+<span class="text-white text-xs font-bold uppercase tracking-wider">Live AI Tracking</span>
+</div>
+<!-- On-Video Feedback Overlay -->
+<div class="absolute top-6 right-6 max-w-xs">
+<div class="bg-black/60 backdrop-blur-md border-l-4 border-success p-4 rounded-r-lg shadow-lg">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-success">check_circle</span>
+<div>
+<p class="text-white font-bold text-sm">Excellent Form</p>
+<p class="text-white/80 text-xs mt-1">Knee alignment is perfect. Hold for 2 seconds.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Video Controls -->
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 px-6 py-3 bg-slate-900/80 backdrop-blur-md rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="text-white hover:text-primary transition-colors"><span class="material-symbols-outlined">mic</span></button>
+<button class="text-white hover:text-primary transition-colors"><span class="material-symbols-outlined text-4xl">pause_circle</span></button>
+<button class="text-white hover:text-primary transition-colors"><span class="material-symbols-outlined">videocam</span></button>
+</div>
+</div>
+<!-- Right Panel: Data Dashboard -->
+<aside class="w-[400px] bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 flex flex-col h-full overflow-y-auto shrink-0 custom-scrollbar">
+<div class="p-6 flex flex-col gap-6">
+<!-- Header -->
+<div>
+<h1 class="text-2xl font-bold text-slate-900 dark:text-white">Knee Rehabilitation</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Active Session • Squat Analysis</p>
+</div>
+<!-- Repetition Counter (Highlight) -->
+<div class="bg-primary/5 dark:bg-primary/10 rounded-xl p-6 flex items-center justify-between border border-primary/20">
+<div class="flex flex-col gap-1">
+<span class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Repetitions</span>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-black text-primary">8</span>
+<span class="text-xl font-medium text-slate-400">/12</span>
+</div>
+<div class="flex items-center gap-1 text-success text-sm font-medium mt-1">
+<span class="material-symbols-outlined text-base">trending_up</span>
+<span>On Target</span>
+</div>
+</div>
+<!-- Circular Progress Visual -->
+<div class="relative size-20">
+<svg class="size-full -rotate-90" viewbox="0 0 36 36">
+<path class="text-slate-200 dark:text-slate-700" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="66, 100" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-xs font-bold text-slate-900 dark:text-white">66%</span>
+</div>
+</div>
+</div>
+<!-- Joint Angles Grid -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Card 1 -->
+<div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-4 border border-slate-100 dark:border-slate-700">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium">L. Knee Angle</span>
+<span class="material-symbols-outlined text-slate-400 text-base">straighten</span>
+</div>
+<div class="text-2xl font-bold text-slate-900 dark:text-white">110°</div>
+<div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 80%"></div>
+</div>
+<div class="text-[10px] text-slate-400 mt-1 flex justify-between">
+<span>0°</span>
+<span>140°</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-4 border border-slate-100 dark:border-slate-700 relative overflow-hidden">
+<!-- Success highlight overlay -->
+<div class="absolute inset-0 border-2 border-success/30 rounded-lg pointer-events-none"></div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium">R. Knee Angle</span>
+<span class="material-symbols-outlined text-success text-base">check</span>
+</div>
+<div class="text-2xl font-bold text-success">112°</div>
+<div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-success h-full rounded-full" style="width: 82%"></div>
+</div>
+<div class="text-[10px] text-slate-400 mt-1 flex justify-between">
+<span>0°</span>
+<span>Target: 110°</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-4 border border-slate-100 dark:border-slate-700">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium">Hip Flexion</span>
+<span class="material-symbols-outlined text-slate-400 text-base">accessibility</span>
+</div>
+<div class="text-2xl font-bold text-slate-900 dark:text-white">85°</div>
+<div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 60%"></div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-4 border border-slate-100 dark:border-slate-700">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium">Sets</span>
+<span class="material-symbols-outlined text-slate-400 text-base">repeat</span>
+</div>
+<div class="text-2xl font-bold text-slate-900 dark:text-white">2 <span class="text-sm font-normal text-slate-400">/ 3</span></div>
+<div class="text-[10px] text-slate-500 mt-2">Next set in 2 mins</div>
+</div>
+</div>
+<!-- Therapist Notes -->
+<div class="flex-1 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<h3 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wide">Therapist's Notes</h3>
+<button class="text-primary text-xs font-medium hover:underline">Edit</button>
+</div>
+<div class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-700 rounded-lg p-4">
+<ul class="space-y-3">
+<li class="flex gap-3 text-sm text-slate-700 dark:text-slate-200">
+<span class="material-symbols-outlined text-yellow-600 dark:text-yellow-500 text-lg shrink-0 mt-0.5">lightbulb</span>
+<span>Focus on slow eccentric movement (3s down).</span>
+</li>
+<li class="flex gap-3 text-sm text-slate-700 dark:text-slate-200">
+<span class="material-symbols-outlined text-yellow-600 dark:text-yellow-500 text-lg shrink-0 mt-0.5">warning</span>
+<span>Do not let the right knee collapse inward during the squat.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- History Graph Mini -->
+<div class="mt-auto pt-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Session Velocity</span>
+<span class="text-xs font-bold text-success">+12% vs last</span>
+</div>
+<div class="flex items-end gap-1 h-16">
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t-sm h-[40%]"></div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t-sm h-[60%]"></div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t-sm h-[50%]"></div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t-sm h-[30%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[70%]"></div>
+<div class="flex-1 bg-primary/40 rounded-t-sm h-[85%]"></div>
+<div class="flex-1 bg-primary rounded-t-sm h-[60%]"></div>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- Custom Scrollbar Styles for webkit -->
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #334155;
+        }
+    </style>
+</body></html>
